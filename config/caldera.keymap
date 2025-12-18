@@ -1,40 +1,28 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-                default_layer {
-// ---------------------------------------------------------------------------------
-// |   `  |  1  |  2  |  3  |  4  |  5  |     |  6  |  7  |  8  |  9  |  0  | BKSP |
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  |  RET |
-// | CAPS |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  ;  | APOS |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |UARW | SHFT |
-// | ESC  | LOW |CTRL | ALT | CMD | SPC |     | CMD | LOW |  /  |LARW |DARW | RARW |
-                        bindings = <
-   &kp GRAVE  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5               &kp N6     &kp N7  &kp N8     &kp N9    &kp N0    &kp BKSP
-   &kp TAB    &kp Q     &kp W     &kp E      &kp R      &kp T                &kp Y      &kp U   &kp I      &kp O     &kp P     &kp RET
-   &kp CAPS   &kp A     &kp S     &kp D      &kp F      &kp G                &kp H      &kp J   &kp K      &kp L     &kp SEMI  &kp APOS
-   &kp LSHFT  &kp Z     &kp X     &kp C      &kp V      &kp B                &kp N      &kp M   &kp COMMA  &kp DOT   &kp UARW  &kp RSHFT
-   &kp ESC    &mo 1     &kp LCTRL &kp LALT   &kp LGUI   &kp SPACE            &kp RGUI   &mo 1   &kp FSLH   &kp LARW  &kp DARW  &kp RARW
-                        >;
-                };
-                lower_layer {
-// ---------------------------------------------------------------------------------------------------------------
-// |       |       | PSCRN | PREV  | PP    | NEXT  |          | MUTE   | VOL DN | VOL UP | F11   | F12    | DEL   |
-// |       |       |       |       |       |       |          |        |        |        |       |        |       |
-// |       |       |       | LBRC  | RBRC  |       |          |        | LBKT   | RBKT   | MINUS | EQUAL  |       |
-// |       |       |       |       |       |       |          |        |        |        |       | PG UP  |       |
-// |       |       |       |       |       |       |          |        |        | \      | HOME  | PG DN  | END   |
-                        bindings = <
-   &trans     &trans    &kp PSCRN &kp C_PREV &kp C_PP   &kp C_NEXT           &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp F11     &kp F12    &kp DEL
-   &trans     &trans    &trans    &trans     &trans     &trans               &trans     &trans       &trans       &trans      &trans     &trans
-   &trans     &trans    &trans    &kp LBRC   &kp RBRC   &trans               &trans     &kp LBKT     &kp RBKT     &kp MINUS   &kp EQUAL  &trans
-   &trans     &trans    &trans    &trans     &trans     &trans               &trans     &trans       &trans       &trans      &kp PG_UP  &trans
-   &trans     &trans    &trans    &trans     &trans     &trans               &trans     &trans       &kp BSLH     &kp HOME    &kp PG_DN  &kp END
-                        >;
-                };
+        default_layer {
+            bindings = <
+&kp ESC    &kp N1  &kp N2     &kp N3    &kp N4    &kp N5       &kp N6    &kp N7  &kp N8     &kp N9    &kp N0    &kp BACKSPACE
+&kp GRAVE  &kp Q   &kp W      &kp E     &kp R     &kp T        &kp Y     &kp U   &kp I      &kp O     &kp P     &kp RET
+&kp TAB    &kp A   &kp S      &kp D     &kp F     &kp G        &kp H     &kp J   &kp K      &kp L     &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z   &kp X      &kp C     &kp V     &kp B        &kp N     &kp M   &kp COMMA  &kp DOT   &kp UP    &kp RSHFT
+&kp CAPS   &mo 1   &kp LCTRL  &kp LALT  &kp LGUI  &kp SPACE    &kp RGUI  &mo 1   &kp FSLH   &kp LEFT  &kp DOWN  &kp RIGHT
+            >;
         };
+
+        lower_layer {
+            bindings = <
+&trans  &trans  &trans      &trans        &trans        &trans    &kp LA(MINUS)  &kp LA(LEFT_BRACKET)  &kp LS(LA(LEFT_BRACKET))  &kp LS(N9)      &kp LS(N0)       &kp DEL
+&trans  &trans  &kp C_PREV  &kp C_PP      &kp C_NEXT    &trans    &trans         &kp LEFT_BRACE        &kp RIGHT_BRACE           &kp UNDER       &kp PLUS         &kp PSCRN
+&trans  &trans  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans    &trans         &kp LBKT              &kp RBKT                  &kp MINUS       &kp EQUAL        &kp F11
+&trans  &trans  &trans      &trans        &trans        &trans    &trans         &kp LS(COMMA)         &kp LS(PERIOD)            &kp PIPE        &kp PG_UP        &kp F12
+&trans  &trans  &trans      &trans        &trans        &trans    &trans         &trans                &kp BSLH                  &kp HOME        &kp PG_DN        &kp END
+            >;
+        };
+    };
 };
