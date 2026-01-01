@@ -20,7 +20,7 @@
 &trans  &trans  &trans      &trans        &trans        &trans    &kp LA(LS(RIGHT_BRACKET))  &kp LA(LEFT_BRACKET)  &kp LS(LA(LEFT_BRACKET))  &kp LS(N9)      &kp LS(N0)  &kp DEL
 &trans  &trans  &kp C_PREV  &kp C_PP      &kp C_NEXT    &trans    &kp LA(MINUS)              &kp LEFT_BRACE        &kp RIGHT_BRACE           &kp UNDER       &kp PLUS    &kp PSCRN
 &trans  &trans  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans    &kp PIPE                   &kp LBKT              &kp RBKT                  &kp MINUS       &kp EQUAL   &kp F11
-&trans  &trans  &trans      &trans        &trans        &trans    &trans                     &trans                &kp LS(COMMA)             &kp LS(PERIOD)  &kp PG_UP   &kp F12
+&trans  &trans  &trans      &trans        &trans        &trans    &trans                     &trans                &kp LS(COMMA)             &kp LS(PERIOD)  &kp PG_UP   &trans
 &trans  &trans  &trans      &trans        &trans        &trans    &trans                     &trans                &kp BSLH                  &kp HOME        &kp PG_DN   &kp END
             >;
         };
